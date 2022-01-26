@@ -1,4 +1,6 @@
-﻿namespace Pizza5050.Shared
+﻿using System.Collections.Generic;
+
+namespace Pizza5050.Shared
 {
     /// <summary>
     /// Represents a pre-configured template for a pizza a user can order
@@ -15,7 +17,7 @@
 
         public string ImageUrl { get; set; }
 
-        public int OrderId { get; set; }
+        List<PizzaTopping> toppings { get; set; } = new List<PizzaTopping>();
 
         public string GetFormattedBasePrice() => BasePrice.ToString("0.00");
     }

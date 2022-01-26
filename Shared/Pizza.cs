@@ -22,7 +22,7 @@ namespace Pizza5050.Shared
 
         public int Size { get; set; }
 
-        public List<Topping> Toppings { get; set; }
+        public List<PizzaTopping> Toppings { get; set; }
 
         public decimal GetBasePrice()
         {

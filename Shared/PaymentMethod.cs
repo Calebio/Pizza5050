@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Pizza5050.Shared
         public string PayType { get; set; }
         public DateTime PayDay { get; set; }
         public decimal TotalAmount { get; set; }
-        //still checking this tho
+        [ForeignKey("OrderInfo")]
         public int OrderId { get; set; }
 
 

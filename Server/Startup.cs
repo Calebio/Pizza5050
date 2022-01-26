@@ -1,14 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pizza5050.Server.Models;
 using Pizza5050.Shared;
-using System.Linq;
 
 namespace Pizza5050.Server
 {
@@ -28,6 +25,7 @@ namespace Pizza5050.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            //services.AddMudServices();
 
             services.AddDbContext<PizzaDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));

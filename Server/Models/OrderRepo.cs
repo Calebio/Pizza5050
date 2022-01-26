@@ -29,7 +29,7 @@ namespace Pizza5050.Server.Models
             var result = await conn.Order.FirstOrDefaultAsync(o => o.OrderId == Id);
             if (result != null)
             {
-                 conn.Order.Remove(result);
+                conn.Order.Remove(result);
                 await conn.SaveChangesAsync();
 
             }
@@ -43,7 +43,7 @@ namespace Pizza5050.Server.Models
 
         public async Task<IEnumerable<Order>> GetOrderByUser(int userId)
         {
-            return await conn.Order.Where(w => w.OrderBy == userId).ToListAsync();
+            return await conn.Order.Where(w => w.UserId == userId).ToListAsync();
         }
 
         public async Task<IEnumerable<Order>> GetOrders()
@@ -51,10 +51,10 @@ namespace Pizza5050.Server.Models
             return await conn.Order.ToListAsync();
         }
 
-        public async Task<IEnumerable<PizzaSpecial>> GetPizzasByOrderId(int orderId)
-        {
-            return await conn.PizzaSpecial.Where(a => a.OrderId == orderId).Include(b => b.Name).ToListAsync();
-        }
+        //public async Task<IEnumerable<PizzaSpecial>> GetPizzasByOrderId(int orderId)
+        //{
+        //    return await conn.
+        //}
 
         public Task<Order> Update(Order order)
         {
@@ -62,6 +62,6 @@ namespace Pizza5050.Server.Models
 
         }
 
-        
+
     }
 }

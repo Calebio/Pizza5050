@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizza5050.Server", "Server\Pizza5050.Server.csproj", "{E95DFFF8-1923-4656-8423-99BC394DF260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizza5050.Server", "Server\Pizza5050.Server.csproj", "{E95DFFF8-1923-4656-8423-99BC394DF260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizza5050.Client", "Client\Pizza5050.Client.csproj", "{C2C77FB4-B99F-4589-8BD5-FF435532E44D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizza5050.Client", "Client\Pizza5050.Client.csproj", "{C2C77FB4-B99F-4589-8BD5-FF435532E44D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizza5050.Shared", "Shared\Pizza5050.Shared.csproj", "{AE3ABF29-4D36-4594-9E48-CB5B4ED25725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizza5050.Shared", "Shared\Pizza5050.Shared.csproj", "{AE3ABF29-4D36-4594-9E48-CB5B4ED25725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

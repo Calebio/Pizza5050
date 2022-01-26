@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pizza5050.Shared;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Pizza5050.Server
@@ -38,7 +35,7 @@ namespace Pizza5050.Server
         public async Task<PizzaSpecial> UpdatePizza(PizzaSpecial pizza)
         {
             var result = await conn.PizzaSpecial.FirstOrDefaultAsync(e => e.Id == pizza.Id);
-            if(result != null )
+            if (result != null)
             {
                 result.Name = pizza.Name;
                 result.Description = pizza.Description;
@@ -50,13 +47,13 @@ namespace Pizza5050.Server
                 return result;
             }
             return null;
-            
+
         }
 
         public async Task DeletePizza(int id)
         {
             var result = await conn.PizzaSpecial.FirstOrDefaultAsync(i => i.Id == id);
-            if(result != null)
+            if (result != null)
             {
                 conn.PizzaSpecial.Remove(result);
                 await conn.SaveChangesAsync();
@@ -64,3 +61,4 @@ namespace Pizza5050.Server
         }
     }
 }
+

@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Pizza5050.Shared;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Pizza5050.Server.Controllers
@@ -12,8 +10,8 @@ namespace Pizza5050.Server.Controllers
     [ApiController]
     public class PizzaSpecialsController : ControllerBase
     {
-        private readonly IPizzaSpecialsRepo pizzaSpecials;
-        public PizzaSpecialsController(IPizzaSpecialsRepo pizzaSpecialsRepo)
+       private readonly IPizzaSpecialsRepo pizzaSpecials;
+       public PizzaSpecialsController(IPizzaSpecialsRepo pizzaSpecialsRepo)
         {
             pizzaSpecials = pizzaSpecialsRepo;
         }
@@ -34,14 +32,14 @@ namespace Pizza5050.Server.Controllers
 
         }
 
-    
+
         [HttpGet("{id}")]
         public async Task<ActionResult<PizzaSpecial>> GetPizza(int id)
         {
             try
             {
                 var result = await pizzaSpecials.GetPizzaSpecial(id);
-                if(result == null)
+                if (result == null)
                 {
                     return NotFound();
                 }
@@ -60,14 +58,14 @@ namespace Pizza5050.Server.Controllers
         {
             try
             {
-                if(pizza == null)
+                if (pizza == null)
                     return BadRequest();
 
-                    var createdPizza = await pizzaSpecials.AddPizza(pizza);
+                var createdPizza = await pizzaSpecials.AddPizza(pizza);
 
                 return CreatedAtAction(nameof(GetPizza),
                     new { id = createdPizza.Id }, createdPizza);
-                
+
             }
             catch (Exception)
             {

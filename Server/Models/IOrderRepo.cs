@@ -1,7 +1,5 @@
 ﻿using Pizza5050.Shared;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Pizza5050.Server.Models
@@ -15,7 +13,7 @@ namespace Pizza5050.Server.Models
         Task<Order> Update(Order order);
         Task DeleteOrder(int orderId);
         Task<IEnumerable<Order>> GetOrderByUser(int userId);
-        Task<IEnumerable<PizzaSpecial>> GetPizzasByOrderId(int orderId);
-       
+        //Task<IEnumerable<PizzaSpecial>> GetPizzasByOrderId(int orderId);
+
     }
 }
